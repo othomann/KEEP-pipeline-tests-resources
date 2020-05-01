@@ -32,7 +32,6 @@ services:
       source_repo_url: 'https://github.com/skaegi/hello-containers'
       type: clone
       has_issues: false
-      enable_traceability: true
   repo1:
     service_id: githubpublic
     parameters:
@@ -40,7 +39,6 @@ services:
       source_repo_url: 'https://github.com/skaegi/hello-containers'
       type: clone
       has_issues: false
-      enable_traceability: true
   repo2:
     service_id: githubpublic
     parameters:
@@ -48,7 +46,6 @@ services:
       source_repo_url: 'https://github.com/skaegi/hello-containers'
       type: clone
       has_issues: false
-      enable_traceability: true
   build:
     service_id: pipeline
     parameters:
@@ -56,7 +53,7 @@ services:
         - repo
         - repo1
         - repo2
-      name: '{{services.repo.parameters.repo_name}}'
+      name: 'multi-repo-pipeline'
       type: tekton
       ui-pipeline: true
       configuration:
