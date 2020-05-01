@@ -56,8 +56,6 @@ services:
           REPOSITORY: '{{services.repo.parameters.source_repo_url}}'
           REVISION: master
         execute: true
-  webide:
-    service_id: orion
 form:
   pipeline:
     parameters:
