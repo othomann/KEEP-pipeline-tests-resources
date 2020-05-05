@@ -9,7 +9,6 @@ template:
   header: '![](toolchain.svg?localize)'
   icon: secure-lock-kubernetes.svg
   required:
-    - build
     - repo
   info:
     git url: >
