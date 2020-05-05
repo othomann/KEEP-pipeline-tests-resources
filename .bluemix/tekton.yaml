@@ -4,3 +4,7 @@ inputs:
   branch: master
   service: ${GIT_REPO}
   path: .tekton
+properties:
+- name: git
+  value: ${GIT_REPO}
+  type: text 
