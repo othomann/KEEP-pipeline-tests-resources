@@ -45,6 +45,7 @@ services:
         env:
           GIT_REPO: repo
           REVISION: master
+          GIT_NAME: 'Tekton-Github-Triggers-{{timestamp}}'
         execute: true
 form:
   pipeline:
