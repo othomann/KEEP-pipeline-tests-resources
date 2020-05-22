@@ -28,7 +28,7 @@ services:
     service_id: githubpublic
     parameters:
       repo_name: 'Tekton-Github-Triggers-{{timestamp}}'
-      source_repo_url: 'https://github.com/idsb3t1/tekton-two-listener-KEEP'
+      source_repo_url: 'https://github.com/ziheng-c/greenwell-tekton'
       type: clone
       has_issues: false
   build:
