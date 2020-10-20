@@ -45,7 +45,6 @@ services:
         env:
           GIT_REPO: repo
           REVISION: master
-          TARGET_REGION: ibm:yp:us-south
         execute: true
 form:
   pipeline:
