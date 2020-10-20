@@ -4,7 +4,3 @@ inputs:
   branch: master
   service: ${GIT_REPO}
   path: .tekton
-properties:
-- name: target-region
-  value: ${TARGET_REGION}
-  type: TEXT
