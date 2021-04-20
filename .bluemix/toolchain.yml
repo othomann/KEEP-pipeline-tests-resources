@@ -25,7 +25,7 @@ toolchain:
       $ref: "#/messages/template.gettingStarted" 
 services:
   repo:
-    service_id: githubpublic
+    service_id: githubconsolidated
     parameters:
       repo_name: 'Tekton-Github-Trigger-Props-extra-{{timestamp}}'
       source_repo_url: 'https://github.com/briangleeson/tekton-samples'
