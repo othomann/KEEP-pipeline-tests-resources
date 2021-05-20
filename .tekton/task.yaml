@@ -10,7 +10,7 @@ spec:
       args:
         - echo "=======================";
           echo "Greenwell Site - Health Check";
-          echo "Using https://github.com/ziheng-c/greenwell-tekton.git";
+          echo "Using https://github.com/idsb3t1/KEEP-pipeline-tests-resources.git";
           echo "Endpoint - https://greenwell-app.eu-de.mybluemix.net/health";
           echo "=======================";
           sleep 60;
