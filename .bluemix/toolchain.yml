@@ -28,23 +28,20 @@ services:
   repo:
     service_id: githubpublic
     parameters:
-      repo_name: 'multi-repo-1-{{timestamp}}'
-      source_repo_url: 'https://github.com/skaegi/hello-containers'
-      type: clone
+      repo_url: 'https://github.com/idsb3t1/KEEP-pipeline-tests-resources'
+      type: link
       has_issues: false
   repo1:
     service_id: githubpublic
     parameters:
-      repo_name: 'multi-repo-2-{{timestamp}}'
-      source_repo_url: 'https://github.com/skaegi/hello-containers'
-      type: clone
+      repo_url: 'https://github.com/idsb3t1/KEEP-1-pipeline-tests-resources'
+      type: link
       has_issues: false
   repo2:
     service_id: githubpublic
     parameters:
-      repo_name: 'multi-repo-3-{{timestamp}}'
-      source_repo_url: 'https://github.com/skaegi/hello-containers'
-      type: clone
+      repo_url: 'https://github.com/idsb3t1/KEEP-2-pipeline-tests-resources'
+      type: link
       has_issues: false
   build:
     service_id: pipeline
@@ -70,13 +67,13 @@ services:
           PROD_REGION_ID: '{{form.pipeline.parameters.prod-region}}'
           PROD_CLUSTER_NAME: '{{form.pipeline.parameters.prod-cluster-name}}'
           PROD_CLUSTER_NAMESPACE: '{{form.pipeline.parameters.prod-cluster-namespace}}'
-          REPOSITORY: '{{services.repo.parameters.source_repo_url}}'
-          REVISION: master
+          REPOSITORY: '{{services.repo.parameters.repo_url}}'
+          REVISION: hello-containers_master
         execute: true
 form:
   pipeline:
     parameters:
-      app-name: '{{services.repo.parameters.repo_name}}'
+      app-name: 'multi-repo-1-{{timestamp}}'
       prod-cluster-namespace: prod
     schema:
       $ref: deploy.json
