@@ -27,16 +27,15 @@ services:
   repo:
     service_id: githubpublic
     parameters:
-      repo_name: 'Tekton-Github-Trigger-Props-extra-{{timestamp}}'
-      source_repo_url: 'https://github.com/briangleeson/tekton-samples'
-      type: clone
+      repo_url: 'https://github.com/idsb3t1/KEEP-pipeline-tests-resources'
+      type: link
       has_issues: false
   build:
     service_id: pipeline
     parameters:
       services:
         - repo
-      name: '{{services.repo.parameters.repo_name}}'
+      name: 'Tekton-Github-Trigger-Props-extra-{{timestamp}}'
       type: tekton
       ui-pipeline: true
       configuration:
@@ -44,12 +43,12 @@ services:
           $text: tekton.yaml
         env:
           GIT_REPO: repo
-          REVISION: master
+          REVISION: tekton-samples_master
         execute: true
 form:
   pipeline:
     parameters:
-      app-name: '{{services.repo.parameters.repo_name}}'
+      app-name: '{{services.build.parameters.name}}'
       prod-cluster-namespace: prod
     schema:
       $ref: deploy.json
