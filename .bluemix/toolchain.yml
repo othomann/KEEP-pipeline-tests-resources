@@ -44,7 +44,6 @@ services:
         env:
           GIT_REPO: repo
           REVISION: master
-          GIT_NAME: 'KEEP-pipeline-tests-resources'
         execute: true
 form:
   pipeline:
