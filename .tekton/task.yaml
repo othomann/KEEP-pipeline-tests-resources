@@ -11,11 +11,15 @@ spec:
         - echo "=======================";
           echo "Greenwell Site - Health Check";
           echo "Using https://github.com/idsb3t1/KEEP-pipeline-tests-resources.git";
-          echo "Endpoint - https://greenwell-app.eu-de.mybluemix.net/health";
+          echo "Endpoint - https://cloud.ibm.com";
           echo "=======================";
           sleep 60;
-          alive=$(curl -s -S -k https://greenwell-app.eu-de.mybluemix.net/health);
-          if [ "$alive" == "200 - Healthy" ];
+          #alive=$(curl -s -S -k https://greenwell-app.eu-de.mybluemix.net/health);
+          #if [ "$alive" == "200 - Healthy" ];
+          #then echo "TEST PASS - 200"; exit 0;
+          #else echo "TEST FAIL - $alive"; exit 1;
+          alive=$(curl -s -o /dev/null -L -w "%{http_code}" https://cloud.ibm.com);
+          if [ "$alive" == "200" ];
           then echo "TEST PASS - 200"; exit 0;
           else echo "TEST FAIL - $alive"; exit 1;
           fi
