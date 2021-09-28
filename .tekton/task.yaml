@@ -18,7 +18,7 @@ spec:
           #if [ "$alive" == "200 - Healthy" ];
           #then echo "TEST PASS - 200"; exit 0;
           #else echo "TEST FAIL - $alive"; exit 1;
-          alive=$(curl -s -o /dev/null -L -w "%{http_code}" https://cloud.ibm.com);
+          alive=$(curl -s -o /dev/null -L -w '%{http_code}' https://cloud.ibm.com)
           if [ "$alive" == "200" ];
           then echo "TEST PASS - 200"; exit 0;
           else echo "TEST FAIL - $alive"; exit 1;
