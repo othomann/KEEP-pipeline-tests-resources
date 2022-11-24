@@ -29,6 +29,12 @@ apiVersion: tekton.dev/v1beta1
 kind: EventListener
 metadata:
   name: listener
+spec:
+  triggers:
+    - binding:
+        name: pipeline-binding
+      template:
+        name: pipeline-template  
 ---
 apiVersion: tekton.dev/v1beta1
 kind: EventListener
